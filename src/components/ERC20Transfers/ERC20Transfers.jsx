@@ -5,27 +5,28 @@ import "antd/dist/antd.css";
 import { Skeleton, Table } from "antd";
 import styles from "./styles";
 import { useERC20Transfers } from "hooks/useERC20Transfers";
+
 function ERC20Transfers() {
   const { ERC20Transfers, chainId } = useERC20Transfers();
   const { Moralis } = useMoralis();
-  console.log(ERC20Transfers);
+
   const columns = [
     {
       title: "Token",
       dataIndex: "address",
-      key: "token",
+      key: "address",
       render: (token) => getEllipsisTxt(token, 5),
     },
     {
       title: "From",
       dataIndex: "from_address",
-      key: "from",
+      key: "from_address",
       render: (from) => getEllipsisTxt(from, 5),
     },
     {
       title: "To",
       dataIndex: "to_address",
-      key: "to",
+      key: "to_address",
       render: (to) => getEllipsisTxt(to, 5),
     },
     {
@@ -37,7 +38,7 @@ function ERC20Transfers() {
     {
       title: "Hash",
       dataIndex: "transaction_hash",
-      key: "hash",
+      key: "transaction_hash",
       render: (hash) => (
         <a
           href={
@@ -49,6 +50,8 @@ function ERC20Transfers() {
               ? `https://polygonscan.com/tx/${hash}`
               : `https://explorer.avax.network/search?query=${hash}`
           }
+          target="_blank"
+          rel="noreferrer"
         >
           View Transaction
         </a>
@@ -59,7 +62,7 @@ function ERC20Transfers() {
   let key = 0;
   return (
     <div>
-      <h1 style={styles.title}>:money_with_wings:ERC20 Transfers</h1>
+      <h1 style={styles.title}>💸ERC20 Transfers</h1>
       <Skeleton loading={!ERC20Transfers}>
         <Table
           dataSource={ERC20Transfers}
@@ -73,4 +76,5 @@ function ERC20Transfers() {
     </div>
   );
 }
+
 export default ERC20Transfers;
