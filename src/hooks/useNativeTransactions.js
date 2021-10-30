@@ -2,10 +2,10 @@ import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvide
 import { useEffect, useState } from "react";
 import { useMoralisWeb3Api, useMoralisWeb3ApiCall } from "react-moralis";
 
-const useNativeTransactions = (options) => {
+export const useNativeTransactions = (options) => {
   const { account } = useMoralisWeb3Api();
   const { chainId } = useMoralisDapp();
-  const [nativeTransactions, setNativeTransactions] = useState([]);
+  const [nativeTransations, setNativeTransations] = useState([]);
   const {
     fetch: getNativeTransations,
     data,
@@ -13,9 +13,7 @@ const useNativeTransactions = (options) => {
     isLoading,
   } = useMoralisWeb3ApiCall(account.getTransactions, { chain: chainId, ...options });
 
-  useEffect(() => data && setNativeTransactions(data?.result), [data]);
+  useEffect(() => data && setNativeTransations(data?.result), [data]);
 
-  return { getNativeTransations, nativeTransactions, chainId, error, isLoading };
+  return { getNativeTransations, nativeTransations, error, isLoading };
 };
-
-export default useNativeTransactions
