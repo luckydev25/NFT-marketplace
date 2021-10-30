@@ -50,6 +50,7 @@ function ERC20Balance(props) {
     },
   ];
 
+  let key = 0;
   return (
     <div>
       <h1 style={styles.title}>💰Token Balances</h1>
@@ -58,12 +59,13 @@ function ERC20Balance(props) {
           dataSource={assets}
           columns={columns}
           rowKey={(record) => {
-            return record.token_address;
+            key++;
+            return `${record.transaction_hash}-${key}`;
           }}
         />
       </Skeleton>
     </div>
-  ); 
+  );
 }
 
 export default ERC20Balance;
