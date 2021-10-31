@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappProvider";
 import { getEllipsisTxt } from "../../helpers/formatters";

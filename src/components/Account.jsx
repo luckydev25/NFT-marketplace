@@ -1,4 +1,5 @@
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
+import React from "react";
 import { useMoralis } from "react-moralis";
 import { getEllipsisTxt } from "helpers/formatters";
 const styles = {

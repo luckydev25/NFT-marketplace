@@ -4,7 +4,6 @@ import { Card, Image, Tooltip, Modal, Input } from "antd";
 import { useNFTBalance } from "hooks/useNFTBalance";
 import { FileSearchOutlined, SendOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
-// there is no getExplorer in helpers/networks
 import { getExplorer } from "helpers/networks";
 import AddressInput from "./AddressInput";
 const { Meta } = Card;
@@ -21,7 +20,7 @@ const styles = {
   },
 };
 
-function NFTBalance() {
+function NFTBalance(options) {
   const { NFTBalance } = useNFTBalance();
   const { chainId }  = useMoralisDapp();
   const { Moralis } = useMoralis();

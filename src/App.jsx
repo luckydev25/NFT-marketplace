@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useMoralis } from "react-moralis";
 import { BrowserRouter as Router, Switch, Route, NavLink, Redirect } from "react-router-dom";
 import Account from "components/Account";
