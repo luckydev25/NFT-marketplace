@@ -1,5 +1,7 @@
+import React from "react";
 import { Flex } from "../../uikit/Flex/Flex";
 import Transfer from "./components/Transfer";
+import { Divider } from "antd";
 import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import NativeBalance from "../NativeBalance";
 import Address from "../Address/Address";

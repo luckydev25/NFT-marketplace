@@ -11,6 +11,7 @@
 //
 //   }
 
+import React from "react";
 import { useWeb3ExecuteFunction } from "react-moralis";
 
 const ABI = [
@@ -254,7 +255,7 @@ const ABI = [
 // const allowance = await Moralis.executeFunction(options);
 
 function Contract() {
-  const { error, fetch, isFetching } = useWeb3ExecuteFunction({
+  const { data, error, fetch, isFetching, isLoading } = useWeb3ExecuteFunction({
     abi: ABI,
     contractAddress: "0xe9e7cea3dedca5984780bafc599bd69add087d56",
   });
