@@ -23,10 +23,7 @@ export const c2 = new Intl.NumberFormat("en-us", {
  * @returns {string}
  */
 export const getEllipsisTxt = (str, n = 6) => {
-  if (str) {
-    return `${str.substr(0, n)}...${str.substr(str.length - n, str.length)}`;
-  }
-  return "";
+  return `${str.substr(0, n)}...${str.substr(str.length - n, str.length)}`;
 };
 
 export const tokenValue = (value, decimals) => (decimals ? value / Math.pow(10, decimals) : value);
