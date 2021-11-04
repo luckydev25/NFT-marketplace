@@ -60,10 +60,7 @@ const useInchDex = () => {
       chain: params.chain, // The blockchain you want to use (eth/bsc/polygon)
       fromTokenAddress: params.fromToken.address, // The token you want to swap
       toTokenAddress: params.toToken.address, // The token you want to receive
-      amount: Moralis.Units.Token(
-        params.fromAmount,
-        params.fromToken.decimals
-      ).toString(),
+      amount: params.fromAmount,
       fromAddress: walletAddress, // Your wallet address
       slippage: 1,
     });
