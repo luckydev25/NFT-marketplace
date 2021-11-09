@@ -8,7 +8,7 @@ There are many components in this boilerplate that do not require an active web3
 
 Please check the [official documentation of Moralis](https://docs.moralis.io/#user) for all the functionalities of Moralis.
 
-![dapp3](https://user-images.githubusercontent.com/78314301/140418251-18b4b3bc-2241-4174-886d-daafe9d6ad3b.gif)
+![Dapp](https://user-images.githubusercontent.com/78314301/140835102-0f3b2549-e199-47aa-bc60-f6b601bd79e9.gif)
 
 # ⭐️ `Star us`
 If this boilerplate helps you build Ethereum dapps faster - please star this project, every star makes us very happy!
@@ -209,14 +209,18 @@ const [address, setAddress] = useState();
 - `functionName` (required): The function name
 - `address` (required): A smart contract address
 - `abi` (required): contract or function ABI(should be provided as an array)
+- `params` (optional): Parameters needed for your specific function
 
 **Example**:
 ```jsx
-const ShowUniswapTotalSupplyLP = () => {
+const ShowUniswapObserveValues = () => {
   const { runContractFunction, contractResponse, error, isLoading } = useAPIContract({
     abi: usdcEthPoolAbi,
-    address: usdcEthPoolAddress,
-    functionName: "totalSupply",
+    contractAddress: usdcEthPoolAddress,
+    functionName: "observe",
+    params: {
+      secondsAgos: [0, 10],
+    },
   });
 
   return (<div>
