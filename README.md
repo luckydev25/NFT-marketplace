@@ -209,18 +209,14 @@ const [address, setAddress] = useState();
 - `functionName` (required): The function name
 - `address` (required): A smart contract address
 - `abi` (required): contract or function ABI(should be provided as an array)
-- `params` (optional): Parameters needed for your specific function
 
 **Example**:
 ```jsx
-const ShowUniswapObserveValues = () => {
+const ShowUniswapTotalSupplyLP = () => {
   const { runContractFunction, contractResponse, error, isLoading } = useAPIContract({
     abi: usdcEthPoolAbi,
-    contractAddress: usdcEthPoolAddress,
-    functionName: "observe",
-    params: {
-      secondsAgos: [0, 10],
-    },
+    address: usdcEthPoolAddress,
+    functionName: "totalSupply",
   });
 
   return (<div>
