@@ -216,7 +216,7 @@ const [address, setAddress] = useState();
 const ShowUniswapObserveValues = () => {
   const { runContractFunction, contractResponse, error, isLoading } = useAPIContract({
     abi: usdcEthPoolAbi,
-    address: usdcEthPoolAddress,
+    contractAddress: usdcEthPoolAddress,
     functionName: "observe",
     params: {
       secondsAgos: [0, 10],
@@ -226,7 +226,11 @@ const ShowUniswapObserveValues = () => {
   return (<div>
     {error && <ErrorMessage error={error} />}
     <button onClick={() => runContractFunction()} disabled={isLoading}>Fetch data</button>
-    {contractResponse && JSON.stringify(contractResponse)}
+    {data && <pre>
+      {JSON.stringify(contractResponse),
+        null,
+        2,
+      )}
     </pre>}
   </div>)
 }
@@ -258,7 +262,11 @@ const ShowUniswapObserveValues = () => {
   return (<div>
     {error && <ErrorMessage error={error} />}
     <button onClick={() => runContractFunction()} disabled={isLoading}>Fetch data</button>
-    {contractResponse && JSON.stringify(contractResponse)}
+    {data && <pre>
+      {JSON.stringify(contractResponse),
+        null,
+        2,
+      )}
     </pre>}
   </div>)
 }
